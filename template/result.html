@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Results</title>
+</head>
+<body>
+    <h1>Results for Your Input</h1>
+    <p>Your input: {{ user_input }}</p>
+    <ul>
+        {% for data_type, matches in results.items() %}
+            <li>{{ data_type }}: {{ matches }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Test another input</a>
+</body>
+</html>
