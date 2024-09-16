@@ -17,3 +17,6 @@ This is a simple Python-based web application built using Flask. It allows users
 To run this project, you'll need to have the following installed:
 - Python 3.x
 - Flask
+
+To output the results of the expression:
+ -HTML
