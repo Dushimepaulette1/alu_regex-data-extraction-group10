@@ -6,14 +6,13 @@ app = Flask(__name__)
 # Regular expressions
 patterns = {
     "Email": r"^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$",
-    "URL": r"https?://[\w\.-]+(?:\.[\w\.-]+)+[/\w\.-]*",
-    "Phone Number": r"\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}",
-    "Credit Card": r"\b(?:\d{4}[-\s]?){3}\d{4}\b",
-    "Time (24-hour)": r"\b([01]?[0-9]|2[0-3]):[0-5][0-9]\b",
-    "Time (12-hour)": r"\b(1[0-2]|0?[1-9]):[0-5][0-9]\s?[APMapm]{2}\b",
-    "HTML Tag": r"<[^>]+>",
-    "Hashtag": r"#\w+",
-    "Currency": r"\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?"
+    "URL": r"^(http:\/\/|https:\/\/)([a-z]+)\.([a-z]+)\.([a-z]{2,8})(\/[a-z]+)?$",
+    "Phone Number": r"^(\(?)(\d{3})(\)?)([\s\.-]?)(\d{3})([-\.]?)(\d{4})$",
+    "Credit Card": r"^((\d{4})([\s-]?))*$",
+    "Time": r"^(\d{1,2}):(\d{2})(\s(PM|AM))?(\s\(\d{2}-([a-z]+)\s([a-z]+)\))?$",
+    "HTML Tag": r"^<(\w+)(\s\w+="(\w\.?-?)+")*>$",
+    "Hashtag": r"^\#(\w)+$",
+    "Currency": r"^<(\w+)(\s\w+="(\w\.?-?)+")*>$"
 }
 
 @app.route('/')
